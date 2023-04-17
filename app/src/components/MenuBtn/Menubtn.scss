@@ -1,0 +1,19 @@
+@import '../../sass/mixins.scss';
+
+.menu-btn{
+    height: 60%;
+    width: 40px;
+    background-color: black;
+    @include flex_center(column);
+    gap: 20%;
+    cursor: pointer;
+    @include responsive_visibility(flex,none);
+
+    &__line{
+        display: block;
+        background-color: aliceblue;
+        width: 80%;
+        height: 3px;
+
+    }
+}

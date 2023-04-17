@@ -1,0 +1,45 @@
+/*
+    * Padding Section *
+*/
+
+@mixin padding_h_lg{
+    padding-left: 128px;
+    padding-right: 128px;
+}
+
+@mixin padding_h_sm{
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+
+
+/*
+    * Flex Section *
+*/
+
+@mixin flex($row,$align,$just){
+    display: flex;
+    flex-direction: $row;
+    align-items: $align;
+    justify-content: $just;
+}
+
+@mixin flex_center($dir){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $dir;
+}
+
+
+/*
+    * Handle Visibility (responsive) *
+*/
+
+@mixin responsive_visibility($small,$large){
+    display: $small;
+    @media screen and (min-width:1025px){
+        display: $large;
+    }
+}

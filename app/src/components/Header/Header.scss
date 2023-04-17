@@ -1,0 +1,18 @@
+@import '../../sass/mixins.scss';
+
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    @include padding_h_sm;
+    height: 60px;
+    background-color: rgb(207, 178, 9);
+    @media screen  and (min-width:1025px){
+        @include padding_h_lg;
+    }
+   
+}
+
+.logo{
+      cursor: pointer;
+}
