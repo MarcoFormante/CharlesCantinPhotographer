@@ -3,29 +3,37 @@
 
 .header-nav{
  @include responsive_visibility(block,flex);
+
  
 }
 
 
 //(ul)
 .header-nav__list{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-   @include flex(row,center,center);
-   gap: 20px;
-   list-style: none;
+@include flex(row,center,center);
+gap: 20px;
+list-style: none;
+padding: 10px 0;
 
-    &__item{
-        cursor: pointer;
-    }
-
-    @media screen and (max-width:1024px){
-        position: absolute;
-        width: 100vw;
-        @include flex(column,center,center);
-        top: 60px;
-        left: 0;
-        background-color: aliceblue;
-     }
+&__item{
+    cursor: pointer;
 }
+
+@media screen and (max-width:1024px){
+    position: absolute;
+    width: 100vw;
+    @include flex(column,center,center);
+    top: 60px;
+    left: 0;
+    background-color: aliceblue;
+    transform: translateY(-250px);
+    transition: transform 0.3s ease;
+    z-index: -1;
+
+    &.menu-open{
+        transform: translateY(0px);
+       
+    }
+ }
+}
+

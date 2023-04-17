@@ -2,10 +2,10 @@ import React from 'react'
 import './Nav.scss'
 
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav className='header-nav'>
-      <ul className='header-nav__list'>
+      <ul className={`header-nav__list ${props.toggleMenu}`}>
         <li className='header-nav__list__item'>Acceuil</li>  
         <li className='header-nav__list__item'>Gallerie</li>  
         <li className='header-nav__list__item'>Tarifs et prestations</li>  

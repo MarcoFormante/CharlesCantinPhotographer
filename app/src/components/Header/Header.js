@@ -1,14 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Header.scss'
 import Nav from '../Nav/Nav'
 import Menubtn from '../MenuBtn/Menubtn'
 
 const Header = () => {
+
+    const [menuToggle, setMenuToggle] = useState("");
+    
+
+    const handleMenuToggle = () => {
+            setMenuToggle(menuToggle ? "" : "menu-open");
+    }
+  
+   
+    
     return (
-        <header className='header'>
+        <header className='header' >
             <div className='logo'>Logo</div>
-            <Nav />
-            <Menubtn />
+            <Nav toggleMenu={menuToggle} />
+            <Menubtn toggleMenu={menuToggle} onClick={handleMenuToggle} />
+          
         </header>
            
   )
