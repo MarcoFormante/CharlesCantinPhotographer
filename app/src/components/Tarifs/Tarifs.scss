@@ -1,0 +1,188 @@
+.tarifs__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+    
+
+        &::before{
+            content: '';
+            background-image: url('../Gallerie/gal-couple.jpg');
+            width: 100vw;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        &::after{
+            content: '';
+           background-color: black;
+            width: 100vw;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+            z-index: -1;
+        }
+}
+
+.tarifs__container{
+    flex-direction: row;
+}
+
+
+.tarifs__left__container{
+    display: flex;   
+    flex-wrap: wrap;
+    width: 900px;
+    gap: 40px 50px;
+    margin-top: 50px;
+
+    @media screen and (max-width:480px){
+        width: 70vw;
+    }
+    
+}
+
+
+
+
+.tarif__card{
+    width: 360px;
+    padding: 10px;
+    min-width: 320px;
+
+    @media screen and (max-width:480px){
+        width: 70vw;
+        min-width: 280px;
+    }
+}
+
+
+.tarifs__title{
+    color: $light__white;
+    font-weight: normal;
+}
+
+.description{
+    background-color: rgba($light__white,80%);
+    padding: 8px 10px;
+    height: 153px;
+    border-radius: 4px;
+    position: relative;
+
+    @media screen and (min-width:1025px){
+        &0,&3,&4{
+            background-color: rgba($gold,20%);
+            color:$light__white;
+        }
+    }
+      
+}
+
+.tarif__price{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+@media screen and (max-width:1024px) {
+
+    .tarifs__container{
+        flex-direction: column;
+    }
+
+
+    .tarifs__left__container{
+      margin: auto;   
+      flex-direction: column;
+      padding: 0;
+      width: 100vw;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .description{
+
+         &0,&2,&4{
+            background-color: rgba($gold,20%);
+            color:$light__white;
+        }
+        
+    } 
+}
+
+
+@media screen and (min-width:1025px) and (max-width:1420px) {
+
+    .tarifs__container{
+        flex-direction: column;
+    }
+
+
+    .tarifs__left__container{
+      display: flex;   
+      flex-direction: row;
+      padding: 0;
+      width: 1000px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-left: 0;
+    }
+
+    .tarifs__right__container{
+        margin-top: 50px;
+        margin-bottom: 50px;  
+    }
+
+   
+}
+
+
+
+.tarif__right__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;  
+    
+}
+
+.tarifs__right__title1,.tarifs__right__title2{
+    font-size: 32px;
+    text-align: center;
+    color: rgba($light__white,100%);
+}
+
+.linkBtn{
+    margin-top: 50px;
+}
+
+
+.btn__contact{
+    width: 265px;
+    height: 70px;
+    color: $gold;
+    border: 1px solid $gold;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+    
+   

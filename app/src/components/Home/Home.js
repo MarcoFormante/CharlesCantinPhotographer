@@ -7,7 +7,7 @@ const Home = () => {
   
   return (
     <div className='homePage' >
-      <h1 className='title' style={{textAlign:"center",fontWeight:"normal"}}>Charles Cantin <span className='ph' style={{display:"block"}}>Photographer</span></h1>
+      <h1 className='title'>Charles Cantin <span className='ph'>Photographer</span></h1>
     </div>
   )
 }

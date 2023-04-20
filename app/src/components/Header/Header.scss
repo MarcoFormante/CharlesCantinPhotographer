@@ -12,7 +12,7 @@
     z-index: 10;
     @include padding_h_sm;
 
-    @media screen  and (min-width:1025px){
+    @media screen  and (min-width:1080px){
         @include padding_h_lg;
     } 
 }
@@ -25,14 +25,21 @@
       }
 }
 
-.title{
 
+.title{
+  text-align: center;
+  font-weight: normal;
+
+    & .ph{
+      display: block;
+    }
 }
 
 
 .social-media__container{
   display: flex;
   gap: 15px;
+  align-items: center;
   
     @media screen  and (min-width:1025px){
       position: absolute;
@@ -41,7 +48,8 @@
     } 
 
     & img{
-      width: 40px;
+      width: 35px;
+      padding-top: 5px;
     }
 }
 

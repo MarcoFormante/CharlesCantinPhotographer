@@ -1,0 +1,80 @@
+.gallerie-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+    
+
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        opacity: 1;
+        background-image: url('../Home/HERO__DESKTOP\ 1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+        background-attachment: fixed;
+    }
+
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.87;
+        background-color: black;
+    }
+    
+}
+
+.gallerie__card figcaption , .card__center--top figcaption,.card__center--bottom figcaption{
+    padding: 10px;
+    border-bottom: 2px solid $gold;
+    color: $light__white;
+}
+
+.gallerie__card,.card__center--top,.card__center--bottom{
+    cursor: pointer;
+        & img{
+            width: 100%;
+        }
+    
+        @media screen and (max-width:480px){
+            width: 310px;
+            margin-top: 20px;
+        }
+}
+
+
+
+@media screen and (min-width:1500px) {
+
+    .gallerie-container{
+        gap: 100px;
+        width: 100vw;
+        padding-bottom: 0px;
+    }
+   
+
+    .card__center--top{
+        margin-top: 40px;
+      
+    }
+    
+    
+    .card__center--bottom{
+        margin-top: -40px;
+    }
+}

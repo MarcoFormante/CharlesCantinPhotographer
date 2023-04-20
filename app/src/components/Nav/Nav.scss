@@ -4,6 +4,7 @@
 .header-nav{
  @include responsive_visibility(block,flex);
  z-index: 0;
+ 
 }
 
 
@@ -26,20 +27,17 @@ padding: 10px 0;
             position: absolute;
             bottom: -5px;
             left: 0;
-          
         }
 
         &__link{
             text-decoration: none;
             color: $light__white;
             
-                &.active{
-                    color: #BFAF97;
-                }
+            &.active{
+                color: #BFAF97;
+            }
         }
     }
-
-
 
 
 @media screen and (max-width:1024px){
@@ -48,7 +46,7 @@ padding: 10px 0;
     @include flex(column,center,center);
     top: 60px;
     left: 0;
-    background-color: aliceblue;
+    background-color: $black;
     transform: translateY(-250px);
     transition: transform 0.3s ease;
     z-index: 0;
@@ -56,13 +54,9 @@ padding: 10px 0;
 
     &.menu-open{
         transform: translateY(0px);
-     
         transition: transform 0.3s ease;
     }
  }
 
-    
-
- 
 }
 
