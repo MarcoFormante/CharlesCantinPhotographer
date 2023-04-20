@@ -1,9 +1,6 @@
-@import '../../sass/mixins.scss';
-
 .menu-btn{
     height: 60%;
     width: 40px;
-    background-color: black;
     @include flex_center(column);
     gap: 20%;
     cursor: pointer;
@@ -11,7 +8,7 @@
 
     &__line{
         display: block;
-        background-color: aliceblue;
+        background-color: $light__white;
         width: 80%;
         height: 3px;
         transition: all 0.3s ease;
@@ -21,15 +18,14 @@
            &:nth-child(1){
             opacity: 0;
         }
+
            &:nth-child(2){
             transform: rotate(-45deg);
         }
+
            &:nth-child(3){
             transform: rotate(45deg)translateY(-7px)translateX(-7px);          
         }
-        }
-
-            
-
+        }      
     }
 }

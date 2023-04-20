@@ -8,11 +8,9 @@
 }
 
 @mixin padding_h_sm{
-    padding-left: 64px;
-    padding-right: 64px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-
-
 
 /*
     * Flex Section *
@@ -43,3 +41,5 @@
         display: $large;
     }
 }
+
+

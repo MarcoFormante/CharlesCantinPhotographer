@@ -1,11 +1,13 @@
 import React from 'react'
-import Header from "../Header/Header";
 
+import '../../sass/index.scss';
 
 const Home = () => {
+
+  
   return (
-    <div>
-      <Header />
+    <div className='homePage' >
+      <h1 className='title' style={{textAlign:"center",fontWeight:"normal"}}>Charles Cantin <span className='ph' style={{display:"block"}}>Photographer</span></h1>
     </div>
   )
 }
