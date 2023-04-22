@@ -72,6 +72,7 @@
 .tarifs__title{
     color: $light__white;
     font-weight: normal;
+    margin-bottom: 5px;
 }
 
 .description{
@@ -130,6 +131,8 @@
     .tarifs__container{
         flex-direction: column;
     }
+
+    
 
 
     .tarifs__left__container{

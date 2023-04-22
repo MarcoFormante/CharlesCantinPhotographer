@@ -32,7 +32,6 @@ const Tarifs = () => {
                 </button>
                 </Link> 
                 </div>
-            
           )
         })}
         
