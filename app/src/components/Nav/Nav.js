@@ -1,11 +1,12 @@
 import React from 'react'
 import CustomLink from './CustomLink'
 import SocialMedia from '../Header/SocialMedia'
+
+
 const Nav = (props) => {
 
   return (
     <>
-    
       <nav className='header-nav'>
       <SocialMedia/>
       <ul className={`header-nav__list ${props.toggleMenu}`}>

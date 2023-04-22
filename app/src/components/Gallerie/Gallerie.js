@@ -7,8 +7,6 @@ const Gallerie = () => {
   let [loading, setloading] = useState(true)
   
   let indexMap = 0;
- 
-
 
   useEffect(() => {
 

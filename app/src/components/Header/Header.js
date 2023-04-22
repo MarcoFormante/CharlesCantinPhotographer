@@ -9,8 +9,6 @@ const Header = () => {
 
     const [menuToggle, setMenuToggle] = useState("");
 
-   
-
     const handleMenuToggle = () => {
             setMenuToggle(menuToggle ? "" : "menu-open");
     }
