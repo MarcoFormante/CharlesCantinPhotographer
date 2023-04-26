@@ -1,17 +1,24 @@
-import React, { useState, useEffect } from 'react'
-const dataUrlMariage = []
+import React, { useState, useEffect, Component } from 'react'
 
-for (let i = 0; i < 16; i++) {
-  dataUrlMariage.push(`/GallerieMariage/mariage-${i}.jpg`)
+
+
+const OpenGallery = (props) => {
+const [dataImg,setData] = useState()
+  useEffect(() => {
+    
+    fetch("https://trueappwork.000webhostapp.com/phDataGallerie.php", {
+      mode: "no-cors"
+    }
+    
+    ).then(data => data.json()).then(datas => 
+   console.log(datas))
+  }, [])
   
-}
-
-const OpenGallery = () => {
-
+ 
   
     return (
       <div className='opened__gallerie__container'>
-      
+        {dataImg} 
         
     </div>
   )

@@ -167,7 +167,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("./HERO__DESKTOP 1.jpg");
+  background-image: url("./s.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   max-height: calc(100vh - 60px);
@@ -216,7 +216,7 @@
   top: 0;
   z-index: -1;
   opacity: 1;
-  background-image: url("../Home/HERO__DESKTOP 1.jpg");
+  background-image: url("../Home/s.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -423,7 +423,7 @@
 
 .contact__container::before {
   content: "";
-  background-image: url("../Home/HERO__DESKTOP 1.jpg");
+  background-image: url("../Home/s.jpg");
 }
 @media screen and (max-width: 1420px) {
   .contact__container {

@@ -14,14 +14,30 @@ import './sass/index.scss';
 
 
 function App() {
-  
  
+  const [dataHeader, setDataHeader] = useState()
+  const [dataHome,setDataHome] = useState()
+
+  useEffect(()=>{
+    fetch('http://localhost:3000/layout/header.json')
+      .then(data => data.json())
+      .then(json => setDataHeader(json))
+    
+    fetch("https://trueappwork.000webhostapp.com/ph_get_home.php")
+    .then( data => data.text()).then(json => setDataHome(JSON.parse(json)))
+    
+  },[])
+
+
+
   return (
     <div className='App'>
-      <Header />
+      
+      {dataHeader && <Header dataHeader={dataHeader} />} 
+      
       <Routes>
           
-          <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home dataHome={ dataHome } />} />
           <Route path='/Gallerie' element={<Gallerie />} />
           <Route path="/Tarifs-et-prestations" element={<Tarifs />}/>
         <Route path='/Contact' element={<Contact />} />

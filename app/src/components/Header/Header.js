@@ -1,32 +1,37 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Nav from '../Nav/Nav'
 import Menubtn from '../MenuBtn/Menubtn'
-import Logo from './Logo Charles cantin.png' 
 import CustomLink from '../Nav/CustomLink'
 
 
-const Header = () => {
 
+const Header = ({dataHeader}) => {
+  
     const [menuToggle, setMenuToggle] = useState("");
-
+  
+   
     const handleMenuToggle = () => {
-            setMenuToggle(menuToggle ? "" : "menu-open");
+        setMenuToggle(menuToggle ? "" : "menu-open");
     }
 
     const handleNavToggle = () => {
         setMenuToggle("")
-        console.log(menuToggle,"hjhg");
+     
     }
+    const logoImg = dataHeader.logo.img;
+    const logoDescription = dataHeader.logo.description;
     
 
+   
     return (
         <header className='header' >
             <div className='logo'>
-                <CustomLink to="/"><img src={Logo} alt="Charles Cantin Photographer" /></CustomLink>   
+                {dataHeader && <CustomLink to={"/"}>
+                    <img src={logoImg} alt={logoDescription } />
+                </CustomLink>}
             </div>
-            
-            <Nav toggleMenu={menuToggle} handleOnClick={handleNavToggle} />
-            <Menubtn toggleMenu={menuToggle} onClick={handleMenuToggle} />
+            <Nav toggleMenu={menuToggle} handleOnClick={handleNavToggle} headerNav={dataHeader} />
+            <Menubtn toggleMenu={menuToggle} onClick={ handleMenuToggle} />
         </header>      
   )
 }
