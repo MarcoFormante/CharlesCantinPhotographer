@@ -1,15 +1,11 @@
 {
-    
+    "logo":{
 
-        "logo":{
+        "img":"/LogoCharlescantin.png",
+        "description":"Charles Cantin Photographer"
+    },
 
-            "img":"/LogoCharlescantin.png",
-            "description":"Charles Cantin Photographer"
-        },
-
-        "links":["/","/Gallerie","/Tarifs-et-prestations","/Contact"]
-    
-    
+    "links":["/","/Gallerie","/Tarifs-et-prestations","/Contact"]
 }
 
 

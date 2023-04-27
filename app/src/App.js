@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import Header from './components/Header/Header';
 import Home from  './components/Home/Home';
 import {Routes, Route} from "react-router-dom"
@@ -8,48 +8,46 @@ import Tarifs from './components/Tarifs/Tarifs';
 import Contact from './components/Contact/Contact';
 import OpenGallery from './components/Gallerie/OpenGallery';
 import './sass/index.scss';
+import Loading from './components/loading/Loading';
+import getDataUrl from './GetData';
 
 
 
 
 
 function App() {
+  const [dataRoute, setDataRoute] = useState()
+
+  useEffect(() => {
+    getDataUrl('https://trueappwork.000webhostapp.com/ph_get_data.php', "ph_nav", setDataRoute);
+    return () => {
+    }
+  }, [])
  
-  const [dataHeader, setDataHeader] = useState()
-  const [dataHome,setDataHome] = useState()
+    return (
+      <div className='App'>
+        
+        <Header dataLink={dataRoute && dataRoute} />
+        
+        <Routes>
+        
+          {dataRoute && dataRoute.map(function (link, index) {
+            let el = [<Home />, <Gallerie />, <Tarifs />, <Contact />]
+            return (
+              <Route path = { link.split("$$$")[0] } key = { "link:" + link } element = { el[index]}/>
+              )
+            })}
 
-  useEffect(()=>{
-    fetch('http://localhost:3000/layout/header.json')
-      .then(data => data.json())
-      .then(json => setDataHeader(json))
-    
-    fetch("https://trueappwork.000webhostapp.com/ph_get_home.php")
-    .then( data => data.text()).then(json => setDataHome(JSON.parse(json)))
-    
-  },[])
+          <Route path="/Gallerie/Mariage" element={<OpenGallery  />} />
+          <Route path="/Gallerie/Grossesse" element={<OpenGallery />} />
+          <Route path="/Gallerie/Bébé" element={<OpenGallery />} />
+          <Route path="/Gallerie/Famille" element={<OpenGallery />} />
+          <Route path="/Gallerie/Baptême" element={<OpenGallery />} />
+          <Route path="/Gallerie/Couple" element={<OpenGallery />} />
+          </Routes>
+      </div>
+    );
+  }
 
-
-
-  return (
-    <div className='App'>
-      
-      {dataHeader && <Header dataHeader={dataHeader} />} 
-      
-      <Routes>
-          
-        <Route path='/' element={<Home dataHome={ dataHome } />} />
-          <Route path='/Gallerie' element={<Gallerie />} />
-          <Route path="/Tarifs-et-prestations" element={<Tarifs />}/>
-        <Route path='/Contact' element={<Contact />} />
-        <Route path="/Gallerie/Mariage" element={<OpenGallery  />} />
-        <Route path="/Gallerie/Grossesse" element={<OpenGallery />} />
-        <Route path="/Gallerie/Bébé" element={<OpenGallery />} />
-        <Route path="/Gallerie/Famille" element={<OpenGallery />} />
-        <Route path="/Gallerie/Baptême" element={<OpenGallery />} />
-        <Route path="/Gallerie/Couple" element={<OpenGallery />} />
-        </Routes>
-    </div>
-  );
-}
 
 export default App;
