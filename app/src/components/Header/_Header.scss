@@ -40,12 +40,15 @@
   display: flex;
   gap: 15px;
   align-items: center;
-  
-    @media screen  and (min-width:1025px){
+
+   
+
+    @media screen and (min-width:350px) {
       position: absolute;
       left: 50%;
-      transform: translateX(-50%);  
-    } 
+      top: 50%;
+      transform: translate(-50%,-50%); 
+    }
 
     & img{
       width: 35px;

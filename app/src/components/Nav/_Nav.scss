@@ -1,4 +1,4 @@
-@import '../../sass/mixins.scss';
+
 
 
 .header-nav{
@@ -44,7 +44,7 @@ padding: 10px 0;
     position: absolute;
     width: 100vw;
     @include flex(column,center,center);
-    top: 60px;
+    top: 0px;
     left: 0;
     background-color: $black;
     transform: translateY(-250px);
@@ -58,5 +58,9 @@ padding: 10px 0;
     }
  }
 
+}
+
+.login{
+    color:$light__white;
 }
 

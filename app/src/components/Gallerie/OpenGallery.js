@@ -1,24 +1,23 @@
-import React, { useState, useEffect, Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 
 const OpenGallery = (props) => {
-const [dataImg,setData] = useState()
+  const [galleryName, setGalleryName] = useState("");
+
+
+  
+
   useEffect(() => {
-    
-    fetch("https://trueappwork.000webhostapp.com/phDataGallerie.php", {
-      mode: "no-cors"
-    }
-    
-    ).then(data => data.json()).then(datas => 
-   console.log(datas))
-  }, [])
+    setGalleryName(document.location.pathname.replace("/Gallerie/",""))
+   
+  },[])
   
  
-  
+
     return (
       <div className='opened__gallerie__container'>
-        {dataImg} 
+        {galleryName}
         
     </div>
   )
