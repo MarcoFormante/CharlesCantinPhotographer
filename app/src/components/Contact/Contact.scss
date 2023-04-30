@@ -1,7 +1,6 @@
 .contact__container{
     @extend .tarifs__container;
     
-
     &::before{
         content: '';
         background-image: url('../Home/BackImg.jpg');

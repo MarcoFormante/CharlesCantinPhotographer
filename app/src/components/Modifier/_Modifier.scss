@@ -1,0 +1,30 @@
+.modifier{
+    width: 100%;
+    background-color: rgba(92, 98, 96, 0.408);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.1s linear;
+   
+    
+    &:hover{
+        opacity: 1;
+    }
+
+    &__container{
+        width: inherit;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 40px;
+
+        & span{
+            cursor: pointer;
+        }
+      
+    }
+}

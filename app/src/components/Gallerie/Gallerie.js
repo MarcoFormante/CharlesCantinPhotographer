@@ -5,7 +5,7 @@ import data_gallerie from './data-gallerie'
 
 
 
-const Gallerie = () => {
+const Gallerie = ({isLogged}) => {
   
   const [categoryLength, setCategoryLength] = useState(0);
   const [categoryData,setCategoryData] = useState(data_gallerie)
@@ -23,7 +23,9 @@ const Gallerie = () => {
       {categoryData.map((data) => {
         
     return(
-            <GallerieCard src={data.src}
+            <GallerieCard
+              isLogged={isLogged}
+              src={data.src}
               alt={data.alt}
               category={data.category}
               to={data.to + data.category}

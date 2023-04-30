@@ -11,8 +11,7 @@ const Login = ({onClick}) => {
   const handleLogin = () => {
     setIsLogin(!isLogin)
     onClick()
-    loginAction(store)
-    
+    loginAction(store) 
   }
  
   const theme = {
