@@ -1,6 +1,7 @@
 import React, { useState ,useEffect} from 'react'
 import GallerieCard from './GallerieCard'
 import data_gallerie from './data-gallerie'
+import { memo } from 'react'
 
 
 
@@ -53,4 +54,4 @@ const Gallerie = ({isLogged}) => {
 }
 
 
-export default Gallerie
+export default memo(Gallerie)

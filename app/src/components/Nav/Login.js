@@ -34,7 +34,6 @@ export default Login
 const LoginContainer = styled.span`
    color: ${props => props.theme.isLogin ? 'red' : '#D9D9D9' };
     cursor:pointer;
-   
     width:50px;
     heigth:50px;
     align-self:center;

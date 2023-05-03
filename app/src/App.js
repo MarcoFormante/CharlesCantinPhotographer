@@ -10,6 +10,10 @@ import OpenGallery from './components/Gallerie/OpenGallery';
 import './sass/index.scss';
 import store from './components/store';
 import { LoginText } from './components/styled/LoginText';
+import { getFirestore, collection, addDoc, getDoc, getDocs } from 'firebase/firestore'
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from './firebaseConfig';
+import { getStorage } from "firebase/storage";
 
 
 
@@ -18,6 +22,21 @@ import { LoginText } from './components/styled/LoginText';
 function App() {
   const [login, setLogin] = useState(false);
 
+const app = initializeApp(firebaseConfig);
+
+ const db = getFirestore(app)
+ const storage = getStorage(app);
+  // const querySnapshot = async () => {
+  //   const a = collection(db, "mariage");
+    
+  //   const get = await getDocs(a);
+  //   get.forEach(g => console.log(g.data()))
+  // }
+  
+  // querySnapshot()
+  
+    
+ 
   useEffect(() => {
     setLogin(store.getState());
 
@@ -43,6 +62,7 @@ function App() {
           <Route path="/Gallerie/Baptême" element={<OpenGallery />} />
           <Route path="/Gallerie/Couple" element={<OpenGallery />} />
         </Routes>
+        
         
         {login && <LoginText>WORK-MODE</LoginText>} 
 

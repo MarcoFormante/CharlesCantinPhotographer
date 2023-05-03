@@ -5,7 +5,7 @@ import Modifier from '../Modifier/Modifier'
 
 const GallerieCard = (props) => {
 
-  console.log(props);
+ 
   return (
       <div className='gallerie-card__container'>
       <Link to={props.to} style={{textDecoration:"none"}}>
@@ -14,7 +14,7 @@ const GallerieCard = (props) => {
         <figcaption>{props.category}</figcaption>
       </figure>
       </Link>
-      {props.isLogged && <Modifier />}
+      {props.isLogged && <Modifier {...props} />}
       </div>
   )
 }
